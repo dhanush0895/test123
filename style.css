@@ -1,0 +1,95 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #fff4e6, #ffe0f0);
+  color: #4b2e2e;
+  text-align: center;
+}
+
+.container {
+  max-width: 750px;
+  margin: auto;
+  padding: 2rem;
+  background: #fff8e1;
+  border-radius: 20px;
+  border: 10px double #d97706;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 3rem;
+  color: #b45309;
+  text-shadow: 2px 2px 4px #ffebcd;
+}
+
+.button {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #f59e0b;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background-color: #d97706;
+}
+
+.countdown {
+  margin-top: 2rem;
+}
+
+.countdown h2 {
+  font-size: 1.8rem;
+  color: #7c2d12;
+  margin-bottom: 1rem;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.count-box {
+  background: linear-gradient(145deg, #ffe5ec, #ffe9b0);
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  min-width: 100px;
+  transition: transform 0.3s ease;
+}
+.count-box:hover {
+  transform: scale(1.1);
+}
+.count-box span {
+  display: block;
+  font-size: 2.5rem;
+  color: #c026d3;
+  font-weight: bold;
+}
+
+.gallery img {
+  width: 30%;
+  margin: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #6b7280;
+}
