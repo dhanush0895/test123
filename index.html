@@ -18,7 +18,8 @@
       max-width: 750px;
       margin: auto;
       padding: 2rem;
-      background: #fff8e1;
+      /* --- CHANGE 1: Background is now semi-transparent to show image behind it --- */
+      background: rgba(255, 248, 225, 0.95);
       border-radius: 20px;
       border: 10px double #d97706;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
@@ -33,11 +34,11 @@
       left: 0;
       right: 0;
       bottom: 0;
-      /* --- UPDATED with your new image link --- */
       background-image: url('https://dhanush0895.github.io/test123/cover%20later%20for%20marriage.jpeg');
       background-size: cover;
       background-position: center;
-      opacity: 0.1;
+      /* --- CHANGE 2: Opacity increased to make background more visible --- */
+      opacity: 0.2;
       z-index: -1;
     }
     h1 {
@@ -134,7 +135,7 @@
     <p>(Followed by Lunch at 12:00 PM)</p>
 
     <p><strong>Location:</strong><br>#495, 13th Main, 34th Cross,<br>Banashankari 2nd Stage, Bangalore 560070</p>
-    <a class="button" href="https://maps.app.goo.gl/AGCtkEKRgP7Vs1uE6" target="_blank">📍 Google Maps</a>
+    <a class="button" href="https://www.google.com/maps/search/?api=1&query=495%2C+13th+Main%2C+34th+Cross%2C+Banashankari+2nd+Stage%2C+Bangalore+560070" target="_blank">📍 Google Maps</a>
 
     <div class="countdown">
       <h2>Countdown to Celebration</h2>
@@ -154,6 +155,7 @@
   </div>
 
   <script>
+    // --- THIS DATE IS NOW CORRECT AND IN THE FUTURE ---
     const eventDate = new Date("June 18, 2025 07:00:00").getTime();
     
     const timerElement = document.getElementById("timer");
@@ -173,10 +175,10 @@
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       timerElement.innerHTML = `
-        <div class="count-box"><span><span class="math-inline">\{days\}</span\><div\>Days</div\></div\>
-<div class\="count\-box"\><span\></span>{hours}</span><div>Hours</div></div>
-        <div class="count-box"><span><span class="math-inline">\{minutes\}</span\><div\>Minutes</div\></div\>
-<div class\="count\-box"\><span\></span>{seconds}</span><div>Seconds</div></div>
+        <div class="count-box"><span>${days}</span><div>Days</div></div>
+        <div class="count-box"><span>${hours}</span><div>Hours</div></div>
+        <div class="count-box"><span>${minutes}</span><div>Minutes</div></div>
+        <div class="count-box"><span>${seconds}</span><div>Seconds</div></div>
       `;
     }
 
