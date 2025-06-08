@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Housewarming Invitation - Siddaiah Naidu & Sandhya Rani</title>
   <style>
-    /* --- CSS HAS BEEN RE-STRUCTURED FOR A RELIABLE BACKGROUND --- */
+    /* This is the final, validated CSS structure */
     body {
       margin: 0;
       padding: 1rem;
       font-family: 'Segoe UI', sans-serif;
-      /* The image is now the main page background, with a semi-transparent gradient on top for readability */
+      /* The image is the page background, with a semi-transparent gradient on top for readability */
       background: 
-        linear-gradient(rgba(255, 244, 230, 0.8), rgba(255, 224, 240, 0.8)), /* Gradient overlay */
-        url('https://dhanush0895.github.io/test123/cover%20later%20for%20marriage.jpeg'); /* Your image */
+        linear-gradient(rgba(255, 244, 230, 0.85), rgba(255, 224, 240, 0.85)), /* This gradient ensures text is readable */
+        url('https://dhanush0895.github.io/test123/cover%20later%20for%20marriage.jpeg'); /* Your image URL */
       background-size: cover;
       background-position: center;
-      background-attachment: fixed; /* Keeps the background still when scrolling */
+      background-attachment: fixed; /* This keeps the background still when the user scrolls */
       color: #4b2e2e;
       text-align: center;
     }
@@ -24,7 +24,7 @@
       max-width: 750px;
       margin: auto;
       padding: 2rem;
-      /* The container now has its solid background color back to create the card effect */
+      /* The invitation card has its own solid background to sit on top of the page background */
       background: #fff8e1; 
       border-radius: 20px;
       border: 10px double #d97706;
@@ -32,8 +32,7 @@
       position: relative;
       z-index: 1;
     }
-    /* The ::before pseudo-element is no longer needed and has been removed */
-
+    
     h1 {
       font-size: 3rem;
       color: #b45309;
@@ -92,6 +91,9 @@
       color: #6b7280;
     }
     @media (max-width: 600px) {
+      body {
+        padding: 0.5rem;
+      }
       .container {
         padding: 1.5rem;
         border-width: 5px;
