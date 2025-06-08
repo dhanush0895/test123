@@ -1,5 +1,5 @@
 
-const eventDate = new Date("May 16, 2025 09:00:00").getTime();
+const eventDate = new Date("June 16, 2025 09:00:00").getTime();
 const timerElement = document.getElementById("timer");
 
 function updateCountdown() {
