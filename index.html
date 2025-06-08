@@ -1,19 +1,97 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Housewarming Invitation - Siddaiah Naidu & Sandhya Rani</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fff4e6, #ffe0f0);
+      color: #4b2e2e;
+      text-align: center;
+    }
+    .container {
+      max-width: 750px;
+      margin: auto;
+      padding: 2rem;
+      background: #fff8e1;
+      border-radius: 20px;
+      border: 10px double #d97706;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 3rem;
+      color: #b45309;
+      text-shadow: 2px 2px 4px #ffebcd;
+    }
+    .button {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #f59e0b;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .button:hover {
+      transform: scale(1.05);
+      background-color: #d97706;
+    }
+    .countdown {
+      margin-top: 2rem;
+    }
+    .countdown h2 {
+      font-size: 1.8rem;
+      color: #7c2d12;
+      margin-bottom: 1rem;
+    }
+    .countdown-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .count-box {
+      background: linear-gradient(145deg, #ffe5ec, #ffe9b0);
+      border-radius: 20px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      min-width: 100px;
+      transition: transform 0.3s ease;
+    }
+    .count-box:hover {
+      transform: scale(1.1);
+    }
+    .count-box span {
+      display: block;
+      font-size: 2.5rem;
+      color: #c026d3;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 2rem;
+      font-style: italic;
+      color: #6b7280;
+    }
+  </style>
 </head>
 <body>
-  <audio autoplay loop id="bg-music" src="music.mp3"></audio>
+  <audio autoplay loop id="bg-music" src="https://www.chosic.com/wp-content/uploads/2021/07/The-Road-Home.mp3"></audio>
+  
   <div class="container">
     <h1>🏠 You're Invited!</h1>
     <p><strong>Siddaiah Naidu & Sandhya Rani</strong> warmly invite you to their housewarming ceremony!</p>
-    <p><strong>Date:</strong> May 16, 2025</p>
-    <p><strong>Time:</strong> 9:00 AM onwards</p>
+    
+    <p><strong>Date:</strong> June 18, 2025</p>
+    <p><strong>Time:</strong> 7:00 AM onwards</p>
+    <p>(Followed by Lunch at 12:00 PM)</p>
+
     <p><strong>Location:</strong><br>#495, 13th Main, 34th Cross,<br>Banashankari 2nd Stage, Bangalore 560070</p>
     <a class="button" href="https://maps.app.goo.gl/GUsXMKShS2VFHcmG8" target="_blank">📍 Google Maps</a>
 
@@ -28,13 +106,6 @@
       <a class="button" href="https://rapido.app.link?destination=12.928295,77.573685" target="_blank">🏍️ Rapido</a>
     </div>
 
-    <div class="gallery">
-      <h2>Memories & Moments</h2>
-      <img src="photo1.jpg" alt="Home 1" />
-      <img src="photo2.jpg" alt="Home 2" />
-      <img src="photo3.jpg" alt="Home 3" />
-    </div>
-
     <div class="rsvp">
       <a class="button" href="https://wa.me/919945529228?text=Yes%2C%20I%27m%20joining%20the%20housewarming!" target="_blank">📩 RSVP on WhatsApp</a>
     </div>
@@ -42,6 +113,36 @@
     <p class="footer">We can't wait to see you there! 🎉</p>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // The date for the countdown timer has been updated here
+    const eventDate = new Date("June 18, 2025 07:00:00").getTime();
+    
+    const timerElement = document.getElementById("timer");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance < 0) {
+        timerElement.innerHTML = "<div class='count-box'>🎉 It's time to celebrate!</div>";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerElement.innerHTML = `
+        <div class="count-box"><span>${days}</span>Days</div>
+        <div class="count-box"><span>${hours}</span>Hours</div>
+        <div class="count-box"><span>${minutes}</span>Minutes</div>
+        <div class="count-box"><span>${seconds}</span>Seconds</div>
+      `;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
 </html>
