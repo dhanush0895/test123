@@ -5,40 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Housewarming Invitation - Siddaiah Naidu & Sandhya Rani</title>
   <style>
+    /* --- CSS HAS BEEN RE-STRUCTURED FOR A RELIABLE BACKGROUND --- */
     body {
       margin: 0;
-      padding: 0;
+      padding: 1rem;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #fff4e6, #ffe0f0);
+      /* The image is now the main page background, with a semi-transparent gradient on top for readability */
+      background: 
+        linear-gradient(rgba(255, 244, 230, 0.8), rgba(255, 224, 240, 0.8)), /* Gradient overlay */
+        url('https://dhanush0895.github.io/test123/cover%20later%20for%20marriage.jpeg'); /* Your image */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Keeps the background still when scrolling */
       color: #4b2e2e;
       text-align: center;
-      padding: 1rem;
     }
     .container {
       max-width: 750px;
       margin: auto;
       padding: 2rem;
-      /* --- THE 'background' COLOR PROPERTY HAS BEEN REMOVED FROM HERE --- */
+      /* The container now has its solid background color back to create the card effect */
+      background: #fff8e1; 
       border-radius: 20px;
       border: 10px double #d97706;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
       position: relative;
       z-index: 1;
-      overflow: hidden;
     }
-    .container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('https://dhanush0895.github.io/test123/cover%20later%20for%20marriage.jpeg');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.2;
-      z-index: -1;
-    }
+    /* The ::before pseudo-element is no longer needed and has been removed */
+
     h1 {
       font-size: 3rem;
       color: #b45309;
