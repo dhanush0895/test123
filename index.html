@@ -7,38 +7,29 @@
   <style>
     body {
       margin: 0;
+      padding: 1rem;
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://dhanush0895.github.io/test123/house.jpeg') no-repeat center center fixed;
+      background:
+        linear-gradient(rgba(255, 244, 230, 0.3), rgba(255, 224, 240, 0.3)),
+        url('https://dhanush0895.github.io/test123/house.jpeg') no-repeat center center fixed;
       background-size: cover;
-    }
-
-    /* Add dark gradient overlay */
-    .overlay {
-      background: rgba(255, 255, 255, 0.85);
-      min-height: 100vh;
-      padding: 2rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      color: #4b2e2e;
       text-align: center;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
 
     .container {
       max-width: 750px;
-      width: 100%;
+      margin: auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
       font-size: 3rem;
       color: #b45309;
-      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
-    }
-
-    p {
-      color: #3b2f2f;
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     }
 
     .button {
@@ -103,12 +94,28 @@
       font-weight: 500;
     }
 
+    /* ✅ Responsive Fix for Mobile: Zoom Background */
     @media (max-width: 600px) {
+      body {
+        padding: 0.5rem;
+        background-size: 200% auto; /* Enlarge image horizontally */
+        background-position: center center;
+      }
+
+      .container {
+        padding: 1.5rem;
+      }
+
       h1 {
         font-size: 2.2rem;
       }
 
+      .countdown-container {
+        gap: 0.5rem;
+      }
+
       .count-box {
+        min-width: 0;
         padding: 0.5rem;
         flex-basis: 20%;
       }
@@ -126,34 +133,32 @@
 <body>
   <audio autoplay loop id="bg-music" src="https://www.chosic.com/wp-content/uploads/2021/07/The-Road-Home.mp3"></audio>
 
-  <div class="overlay">
-    <div class="container">
-      <h1>🏠 You're Invited!</h1>
-      <p><strong>Siddaiah Naidu & Sandhya Rani</strong> warmly invite you to their housewarming ceremony!</p>
+  <div class="container">
+    <h1>🏠 You're Invited!</h1>
+    <p><strong>Siddaiah Naidu & Sandhya Rani</strong> warmly invite you to their housewarming ceremony!</p>
 
-      <p><strong>Date:</strong> June 18, 2025</p>
-      <p><strong>Time:</strong> 7:00 AM onwards</p>
-      <p>(Followed by Lunch at 12:00 PM)</p>
+    <p><strong>Date:</strong> June 18, 2025</p>
+    <p><strong>Time:</strong> 7:00 AM onwards</p>
+    <p>(Followed by Lunch at 12:00 PM)</p>
 
-      <p><strong>Location:</strong><br>#495, 13th Main, 34th Cross,<br>Banashankari 2nd Stage, Bangalore 560070</p>
-      <a class="button" href="https://www.google.com/maps/search/?api=1&query=495%2C+13th+Main%2C+34th+Cross%2C+Banashankari+2nd+Stage%2C+Bangalore+560070" target="_blank">📍 Google Maps</a>
+    <p><strong>Location:</strong><br>#495, 13th Main, 34th Cross,<br>Banashankari 2nd Stage, Bangalore 560070</p>
+    <a class="button" href="https://www.google.com/maps/search/?api=1&query=495%2C+13th+Main%2C+34th+Cross%2C+Banashankari+2nd+Stage%2C+Bangalore+560070" target="_blank">📍 Google Maps</a>
 
-      <div class="countdown">
-        <h2>Countdown to Celebration</h2>
-        <div id="timer" class="countdown-container"></div>
-      </div>
-
-      <div class="travel-links">
-        <a class="button" href="https://m.uber.com/ul/?action=setPickup&dropoff[latitude]=12.9180558&dropoff[longitude]=77.565748&dropoff[nickname]=Destination" target="_blank">🚗 Uber</a>
-        <a class="button" href="https://book.olacabs.com/?drop_lat=12.9180558&drop_lng=77.565748" target="_blank">🚕 Ola</a>
-      </div>
-
-      <div class="rsvp">
-        <a class="button" href="https://wa.me/919945529228?text=Yes%2C%20I%27m%20joining%20the%20housewarming!" target="_blank">📩 RSVP on WhatsApp</a>
-      </div>
-
-      <p class="footer">We can't wait to see you there! 🎉</p>
+    <div class="countdown">
+      <h2>Countdown to Celebration</h2>
+      <div id="timer" class="countdown-container"></div>
     </div>
+
+    <div class="travel-links">
+      <a class="button" href="https://m.uber.com/ul/?action=setPickup&dropoff[latitude]=12.9180558&dropoff[longitude]=77.565748&dropoff[nickname]=Destination" target="_blank">🚗 Uber</a>
+      <a class="button" href="https://book.olacabs.com/?drop_lat=12.9180558&drop_lng=77.565748" target="_blank">🚕 Ola</a>
+    </div>
+
+    <div class="rsvp">
+      <a class="button" href="https://wa.me/919945529228?text=Yes%2C%20I%27m%20joining%20the%20housewarming!" target="_blank">📩 RSVP on WhatsApp</a>
+    </div>
+
+    <p class="footer">We can't wait to see you there! 🎉</p>
   </div>
 
   <script>
