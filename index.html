@@ -26,8 +26,6 @@
       z-index: 1; /* Establishes stacking context */
       overflow: hidden; /* Keeps pseudo-element contained */
     }
-
-    /* --- NEW: Ganesha Background Image Styling --- */
     .container::before {
       content: '';
       position: absolute;
@@ -41,7 +39,6 @@
       opacity: 0.1; /* Lowered opacity for readability */
       z-index: -1; /* Places the image behind the content */
     }
-
     h1 {
       font-size: 3rem;
       color: #b45309;
@@ -99,29 +96,27 @@
       font-style: italic;
       color: #6b7280;
     }
-
-    /* --- NEW: Media Query for Mobile Responsive Countdown --- */
     @media (max-width: 600px) {
       .container {
-        padding: 1.5rem; /* Adjust container padding */
+        padding: 1.5rem;
         border-width: 5px;
       }
       h1 {
-        font-size: 2.2rem; /* Smaller main heading */
+        font-size: 2.2rem;
       }
       .countdown-container {
-        gap: 0.5rem; /* Reduce gap between boxes */
+        gap: 0.5rem;
       }
       .count-box {
-        min-width: 0; /* Let flexbox decide width */
-        padding: 0.5rem; /* Reduce padding */
-        flex-basis: 20%; /* Distribute space */
+        min-width: 0;
+        padding: 0.5rem;
+        flex-basis: 20%;
       }
       .count-box span {
-        font-size: 1.5rem; /* Smaller number font */
+        font-size: 1.5rem;
       }
       .count-box div {
-        font-size: 0.7rem; /* Smaller text font if needed */
+        font-size: 0.7rem;
       }
     }
   </style>
@@ -138,7 +133,8 @@
     <p>(Followed by Lunch at 12:00 PM)</p>
 
     <p><strong>Location:</strong><br>#495, 13th Main, 34th Cross,<br>Banashankari 2nd Stage, Bangalore 560070</p>
-    <a class="button" href="https://maps.google.com/maps?q=12.9323778,77.5425039" target="_blank">📍 Google Maps</a>
+    
+    <a class="button" href="https://maps.app.goo.gl/AGCtkEKRgP7Vs1uE6" target="_blank">📍 Google Maps</a>
 
     <div class="countdown">
       <h2>Countdown to Celebration</h2>
@@ -148,7 +144,6 @@
     <div class="travel-links">
       <a class="button" href="https://m.uber.com/ul/?action=setPickup&dropoff[latitude]=12.9323778&dropoff[longitude]=77.5425039&dropoff[nickname]=Dhanush%20House" target="_blank">🚗 Uber</a>
       <a class="button" href="https://book.olacabs.com/?drop_lat=12.9323778&drop_lng=77.5425039&utm_source=dhanush_invite" target="_blank">🚕 Ola</a>
-      <a class="button" href="https://rapido.app.link/d/Dhanush%20House?destination=12.9323778,77.5425039" target="_blank">🏍️ Rapido</a>
     </div>
 
     <div class="rsvp">
