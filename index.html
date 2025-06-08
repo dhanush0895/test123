@@ -12,7 +12,7 @@
       background: linear-gradient(to bottom right, #fff4e6, #ffe0f0);
       color: #4b2e2e;
       text-align: center;
-      padding: 1rem; /* Add some padding for smaller screens */
+      padding: 1rem;
     }
     .container {
       max-width: 750px;
@@ -22,9 +22,9 @@
       border-radius: 20px;
       border: 10px double #d97706;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-      position: relative; /* Needed for the background image */
-      z-index: 1; /* Establishes stacking context */
-      overflow: hidden; /* Keeps pseudo-element contained */
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
     }
     .container::before {
       content: '';
@@ -36,8 +36,8 @@
       background-image: url('https://i.pinimg.com/originals/e1/99/37/e199374a96ba3f5164d1508a54824855.jpg');
       background-size: cover;
       background-position: center;
-      opacity: 0.1; /* Lowered opacity for readability */
-      z-index: -1; /* Places the image behind the content */
+      opacity: 0.1;
+      z-index: -1;
     }
     h1 {
       font-size: 3rem;
@@ -142,12 +142,224 @@
     </div>
 
     <div class="travel-links">
-      <a class="button" href="https://m.uber.com/ul/?action=setPickup&dropoff[latitude]=12.9323778&dropoff[longitude]=77.5425039&dropoff[nickname]=Dhanush%20House" target="_blank">🚗 Uber</a>
-      <a class="button" href="https://book.olacabs.com/?drop_lat=12.9323778&drop_lng=77.5425039&utm_source=dhanush_invite" target="_blank">🚕 Ola</a>
+      <a class="button" href="https://m.uber.com/ul/?action=setPickup&dropoff[latitude]=12.9180558&dropoff[longitude]=77.565748&dropoff[nickname]=Destination" target="_blank">🚗 Uber</a>
+      <a class="button" href="olacabs://book/car?drop_lat=12.9180558&drop_lng=77.565748&landing_page=bk&utm_source=dhanush_invite" target="_blank">🚕 Ola</a>
     </div>
 
     <div class="rsvp">
       <a class="button" href="https://wa.me/919945529228?text=Yes%2C%20I%27m%20joining%20the%20housewarming!" target="_blank">📩 RSVP on WhatsApp</a>
+    </div>
+
+    <p class="footer">We can't wait to see you there! 🎉</p>
+  </div>
+
+  <script>
+    const eventDate = new Date("June 18, 2025 07:00:00").getTime();
+    
+    const timerElement = document.getElementById("timer");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance < 0) {
+        timerElement.innerHTML = "<div class='count-box'>🎉 It's time to celebrate!</div>";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerElement.innerHTML = `
+        <div class="count-box"><span>${days}</span><div>Days</div></div>
+        <div class="count-box"><span>${hours}</span><div>Hours</div></div>
+        <div class="count-box"><span>${minutes}</span><div>Minutes</div></div>
+        <div class="count-box"><span>${seconds}</span><div>Seconds</div></div>
+      `;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
+I apologize that the links were still not behaving as expected. You are right to point it out, as deep linking into apps like Ola and Uber can be very sensitive and depends heavily on the device, the app version, and the correct URL format.
+
+I have researched the most current and reliable link formats and have rebuilt the links for both Ola and Uber using your new coordinates (`12.9180558`, `77.565748`). These should provide a much better result.
+
+### The Corrected Links
+
+Here are the new, more robust links:
+
+* **For Uber:** This link is the official "universal link" format. It attempts to open the app directly, sets the dropoff latitude, longitude, and includes a nickname for the destination to make it clear in the app.
+    * **New Link:** `https://m.uber.com/ul/?action=setPickup&dropoff[latitude]=12.9180558&dropoff[longitude]=77.565748&dropoff[nickname]=Destination`
+
+* **For Ola:** I am providing two options for Ola, as their system can be tricky. The first is the safest and should work on all devices.
+
+    * **Option 1 (Recommended):** This link uses the official web booking page, which is the most reliable way to redirect to the app with the destination coordinates pre-filled.
+        * **New Link:** `https://book.olacabs.com/?drop_lat=12.9180558&drop_lng=77.565748`
+
+    * **Option 2 (Direct App Link):** This link attempts to open the Ola app directly. It may not work if the app isn't installed, but it can be a more direct experience if it is.
+        * **Alternative Link:** `olacabs://book/car?drop_lat=12.9180558&drop_lng=77.565748`
+
+I have integrated the **Uber link** and the **recommended Ola link (Option 1)** into the final code below.
+
+### Here is the Complete, Updated Code
+
+Please replace your `index.html` file's content with this entire block.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Housewarming Invitation - Siddaiah Naidu & Sandhya Rani</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fff4e6, #ffe0f0);
+      color: #4b2e2e;
+      text-align: center;
+      padding: 1rem; /* Add some padding for smaller screens */
+    }
+    .container {
+      max-width: 750px;
+      margin: auto;
+      padding: 2rem;
+      background: #fff8e1;
+      border-radius: 20px;
+      border: 10px double #d97706;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      position: relative; /* Needed for the background image */
+      z-index: 1; /* Establishes stacking context */
+      overflow: hidden; /* Keeps pseudo-element contained */
+    }
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('[https://i.pinimg.com/originals/e1/99/37/e199374a96ba3f5164d1508a54824855.jpg](https://i.pinimg.com/originals/e1/99/37/e199374a96ba3f5164d1508a54824855.jpg)');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1; /* Lowered opacity for readability */
+      z-index: -1; /* Places the image behind the content */
+    }
+    h1 {
+      font-size: 3rem;
+      color: #b45309;
+      text-shadow: 2px 2px 4px #ffebcd;
+    }
+    .button {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #f59e0b;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .button:hover {
+      transform: scale(1.05);
+      background-color: #d97706;
+    }
+    .countdown {
+      margin-top: 2rem;
+    }
+    .countdown h2 {
+      font-size: 1.8rem;
+      color: #7c2d12;
+      margin-bottom: 1rem;
+    }
+    .countdown-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .count-box {
+      background: linear-gradient(145deg, #ffe5ec, #ffe9b0);
+      border-radius: 20px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      min-width: 100px;
+      transition: transform 0.3s ease;
+    }
+    .count-box:hover {
+      transform: scale(1.1);
+    }
+    .count-box span {
+      display: block;
+      font-size: 2.5rem;
+      color: #c026d3;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 2rem;
+      font-style: italic;
+      color: #6b7280;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+        border-width: 5px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .countdown-container {
+        gap: 0.5rem;
+      }
+      .count-box {
+        min-width: 0;
+        padding: 0.5rem;
+        flex-basis: 20%;
+      }
+      .count-box span {
+        font-size: 1.5rem;
+      }
+      .count-box div {
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop id="bg-music" src="[https://www.chosic.com/wp-content/uploads/2021/07/The-Road-Home.mp3](https://www.chosic.com/wp-content/uploads/2021/07/The-Road-Home.mp3)"></audio>
+  
+  <div class="container">
+    <h1>🏠 You're Invited!</h1>
+    <p><strong>Siddaiah Naidu & Sandhya Rani</strong> warmly invite you to their housewarming ceremony!</p>
+    
+    <p><strong>Date:</strong> June 18, 2025</p>
+    <p><strong>Time:</strong> 7:00 AM onwards</p>
+    <p>(Followed by Lunch at 12:00 PM)</p>
+
+    <p><strong>Location:</strong><br>#495, 13th Main, 34th Cross,<br>Banashankari 2nd Stage, Bangalore 560070</p>
+    <a class="button" href="[https://maps.app.goo.gl/AGCtkEKRgP7Vs1uE6](https://maps.app.goo.gl/AGCtkEKRgP7Vs1uE6)" target="_blank">📍 Google Maps</a>
+
+    <div class="countdown">
+      <h2>Countdown to Celebration</h2>
+      <div id="timer" class="countdown-container"></div>
+    </div>
+
+    <div class="travel-links">
+      <a class="button" href="[https://m.uber.com/ul/?action=setPickup&dropoff](https://m.uber.com/ul/?action=setPickup&dropoff)[latitude]=12.9180558&dropoff[longitude]=77.565748&dropoff[nickname]=Destination" target="_blank">🚗 Uber</a>
+      <a class="button" href="[https://book.olacabs.com/?drop_lat=12.9180558&drop_lng=77.565748](https://book.olacabs.com/?drop_lat=12.9180558&drop_lng=77.565748)" target="_blank">🚕 Ola</a>
+    </div>
+
+    <div class="rsvp">
+      <a class="button" href="[https://wa.me/919945529228?text=Yes%2C%20I%27m%20joining%20the%20housewarming](https://wa.me/919945529228?text=Yes%2C%20I%27m%20joining%20the%20housewarming)!" target="_blank">📩 RSVP on WhatsApp</a>
     </div>
 
     <p class="footer">We can't wait to see you there! 🎉</p>
