@@ -10,29 +10,30 @@
       padding: 1rem;
       font-family: 'Segoe UI', sans-serif;
       background: 
-        linear-gradient(rgba(255, 244, 230, 0.85), rgba(255, 224, 240, 0.85)),
+        linear-gradient(rgba(255, 244, 230, 0.25), rgba(255, 224, 240, 0.25)),
         url('https://dhanush0895.github.io/test123/cover%20later%20for%20marriage.jpeg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       color: #4b2e2e;
       text-align: center;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* improves readability */
     }
+
     .container {
       max-width: 750px;
       margin: auto;
       padding: 2rem;
-      /* --- The background, border, and shadow have been REMOVED to make the container fully transparent --- */
       position: relative;
       z-index: 1;
     }
-    
+
     h1 {
       font-size: 3rem;
       color: #b45309;
-      /* Added a stronger text shadow for better readability on a transparent background */
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); 
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     }
+
     .button {
       display: inline-block;
       margin: 0.5rem;
@@ -45,25 +46,30 @@
       box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
     }
+
     .button:hover {
       transform: scale(1.05);
       background-color: #d97706;
     }
+
     .countdown {
       margin-top: 2rem;
     }
+
     .countdown h2 {
       font-size: 1.8rem;
       color: #7c2d12;
       text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
       margin-bottom: 1rem;
     }
+
     .countdown-container {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
     }
+
     .count-box {
       background: linear-gradient(145deg, #ffe5ec, #ffe9b0);
       border-radius: 20px;
@@ -72,15 +78,18 @@
       min-width: 100px;
       transition: transform 0.3s ease;
     }
+
     .count-box:hover {
       transform: scale(1.1);
     }
+
     .count-box span {
       display: block;
       font-size: 2.5rem;
       color: #c026d3;
       font-weight: bold;
     }
+
     .footer {
       margin-top: 2rem;
       font-style: italic;
@@ -88,27 +97,34 @@
       font-weight: 500;
       text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
     }
+
     @media (max-width: 600px) {
       body {
         padding: 0.5rem;
       }
+
       .container {
         padding: 1.5rem;
       }
+
       h1 {
         font-size: 2.2rem;
       }
+
       .countdown-container {
         gap: 0.5rem;
       }
+
       .count-box {
         min-width: 0;
         padding: 0.5rem;
         flex-basis: 20%;
       }
+
       .count-box span {
         font-size: 1.5rem;
       }
+
       .count-box div {
         font-size: 0.7rem;
       }
@@ -117,11 +133,11 @@
 </head>
 <body>
   <audio autoplay loop id="bg-music" src="https://www.chosic.com/wp-content/uploads/2021/07/The-Road-Home.mp3"></audio>
-  
+
   <div class="container">
     <h1>🏠 You're Invited!</h1>
     <p><strong>Siddaiah Naidu & Sandhya Rani</strong> warmly invite you to their housewarming ceremony!</p>
-    
+
     <p><strong>Date:</strong> June 18, 2025</p>
     <p><strong>Time:</strong> 7:00 AM onwards</p>
     <p>(Followed by Lunch at 12:00 PM)</p>
@@ -148,7 +164,6 @@
 
   <script>
     const eventDate = new Date("June 18, 2025 07:00:00").getTime();
-    
     const timerElement = document.getElementById("timer");
 
     function updateCountdown() {
