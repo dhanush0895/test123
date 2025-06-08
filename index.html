@@ -12,6 +12,7 @@
       background: linear-gradient(to bottom right, #fff4e6, #ffe0f0);
       color: #4b2e2e;
       text-align: center;
+      padding: 1rem; /* Add some padding for smaller screens */
     }
     .container {
       max-width: 750px;
@@ -21,7 +22,26 @@
       border-radius: 20px;
       border: 10px double #d97706;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      position: relative; /* Needed for the background image */
+      z-index: 1; /* Establishes stacking context */
+      overflow: hidden; /* Keeps pseudo-element contained */
     }
+
+    /* --- NEW: Ganesha Background Image Styling --- */
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://i.pinimg.com/originals/e1/99/37/e199374a96ba3f5164d1508a54824855.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1; /* Lowered opacity for readability */
+      z-index: -1; /* Places the image behind the content */
+    }
+
     h1 {
       font-size: 3rem;
       color: #b45309;
@@ -79,6 +99,31 @@
       font-style: italic;
       color: #6b7280;
     }
+
+    /* --- NEW: Media Query for Mobile Responsive Countdown --- */
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem; /* Adjust container padding */
+        border-width: 5px;
+      }
+      h1 {
+        font-size: 2.2rem; /* Smaller main heading */
+      }
+      .countdown-container {
+        gap: 0.5rem; /* Reduce gap between boxes */
+      }
+      .count-box {
+        min-width: 0; /* Let flexbox decide width */
+        padding: 0.5rem; /* Reduce padding */
+        flex-basis: 20%; /* Distribute space */
+      }
+      .count-box span {
+        font-size: 1.5rem; /* Smaller number font */
+      }
+      .count-box div {
+        font-size: 0.7rem; /* Smaller text font if needed */
+      }
+    }
   </style>
 </head>
 <body>
@@ -133,10 +178,10 @@
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       timerElement.innerHTML = `
-        <div class="count-box"><span>${days}</span>Days</div>
-        <div class="count-box"><span>${hours}</span>Hours</div>
-        <div class="count-box"><span>${minutes}</span>Minutes</div>
-        <div class="count-box"><span>${seconds}</span>Seconds</div>
+        <div class="count-box"><span>${days}</span><div>Days</div></div>
+        <div class="count-box"><span>${hours}</span><div>Hours</div></div>
+        <div class="count-box"><span>${minutes}</span><div>Minutes</div></div>
+        <div class="count-box"><span>${seconds}</span><div>Seconds</div></div>
       `;
     }
 
